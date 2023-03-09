@@ -6,3 +6,4 @@ use touch to create empty file
 the chmod u+x execute file
 chmod u+x,g+x,0+r give permission to user and owner to excute file
 give permission to the owner,group owner and others
+chmod 007 give permission to other users only
