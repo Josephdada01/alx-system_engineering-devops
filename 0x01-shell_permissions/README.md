@@ -8,3 +8,4 @@ chmod u+x,g+x,0+r give permission to user and owner to excute file
 give permission to the owner,group owner and others
 chmod 007 give permission to other users only
 chmod 753 set mode to a file to read write and excute
+you use chmod -- reference to mirror a file
