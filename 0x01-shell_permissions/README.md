@@ -10,3 +10,4 @@ chmod 007 give permission to other users only
 chmod 753 set mode to a file to read write and excute
 you use chmod --reference to mirror a file
 use chmod a+X * to execute permission to all subdirectories of the current directory
+use mkdir -m 751 my_dir to create a directory that has permission with the name my_dir
