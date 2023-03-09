@@ -1,4 +1,3 @@
-Editing
-i include the command to print the current user username
-just a little changes
-how to print the current groups the user is part of it
+switch the current user to betty
+print the user name of current user
+print the groups including current user
