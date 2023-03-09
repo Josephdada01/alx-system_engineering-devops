@@ -3,3 +3,4 @@ print the user name of current user
 print the groups including current user
 using chown to change the owner of a file to betty
 use touch to create empty file
+the chmod u+x execute file
