@@ -1,2 +1,2 @@
 #!/bin/bash
-printenv TRUEKNWOLEDGE="128"
+echo $((128 + $TRUEKNWOLEDGE))
