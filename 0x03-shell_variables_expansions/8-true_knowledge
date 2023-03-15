@@ -1,2 +1,2 @@
 #!/bin/bash
-export TRUEKNWOLEDGE="128"
+printenv TRUEKNWOLEDGE="128"
