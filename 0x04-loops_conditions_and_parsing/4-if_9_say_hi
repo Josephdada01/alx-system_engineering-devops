@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script display Best School 10 times, but for the 9 it says hi
+count=1
+while [ $count -le 10 ]; do
+	if [ $count -eq 9 ]; then
+		echo "Best School"
+		echo "Hi"
+	else
+		echo "Best school"
+	fi
+	((count++))
+done
+
