@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#this code is used to best school using while
+while ((i = 1; i <= 10; i++)); do
+	echo "Best School"
+done
