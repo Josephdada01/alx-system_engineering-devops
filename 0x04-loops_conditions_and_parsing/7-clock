@@ -12,6 +12,6 @@ while [ $hour -le 12 ]; do
             echo $minute
             minute=$((minute + 1))
     done
-    minute=0 #resetting minute to 0
+    minute=1 #resetting minute to 1
     hour=$((hour + 1))
 done
