@@ -8,4 +8,5 @@
 #It shows all active listening sockets for TCP and UDP.
 #-p: This option is used to show the PID and name of the program to which each socket belongs. 
 #It displays the process information associated with each network connection.
+
 sudo netstat -lp
