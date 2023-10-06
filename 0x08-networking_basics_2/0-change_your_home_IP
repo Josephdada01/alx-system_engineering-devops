@@ -5,9 +5,9 @@
 #facebook.com resolves to 8.8.8.8.
 
 # Define the IP address mappings
-local_ip="127.0.0.2"
+local_ip="127.0.0.1"
 facebook_ip="8.8.8.8"
 
-# Update the hosts file
+# Update the hosts files
 echo "$local_ip	localhost" | sudo tee -a /etc/hosts
 echo "$facebook_ip	facebook.com" | sudo tee -a /etc/hosts
