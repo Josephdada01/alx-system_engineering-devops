@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#Write a Bash script that displays listening ports:
+#That only shows listening sockets
+#That shows the PID and name of the program to which each socket belongs
+#netstat: This is a command-line network utility used for displaying network connections, routing tables, interface statistics, 
+#masquerade connections, and multicast memberships.
+#-l: This option is used to display only listening sockets. 
+#It shows all active listening sockets for TCP and UDP.
+#-p: This option is used to show the PID and name of the program to which each socket belongs. 
+#It displays the process information associated with each network connection.
+sudo netstat -lp
