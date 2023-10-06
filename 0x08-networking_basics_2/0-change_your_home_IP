@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#Write a Bash script that configures an Ubuntu server with the below requirements.
+#Requirements:
+#localhost resolves to 127.0.0.2
+#facebook.com resolves to 8.8.8.8.
+
+# Define the IP address mappings
+local_ip="127.0.0.2"
+facebook_ip="8.8.8.8"
+
+# Update the hosts file
+echo "$local_ip	localhost" | sudo tee -a /etc/hosts
+echo "$facebook_ip	facebook.com" | sudo tee -a /etc/hosts
