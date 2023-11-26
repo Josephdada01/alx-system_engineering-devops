@@ -6,7 +6,7 @@
 # File group is www-data
 # File contains I love Puppet
 
-file { '/tmp/school':
+file {'/tmp/school':
     ensure  => 'file',
     content => 'I love puppet',
     mode    => '0744',
