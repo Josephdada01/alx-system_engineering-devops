@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Install nginx web server
+
+#step1
+sudo apt update
+sudo apt install nginx -y
+
+#step 2
+sudo sed -i 's/listen [::]:80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
+
+#step 3
+sudo bash -c 'cat <<EOF > /var/www/html/index.html
+Hello World!
+EOF'
+
+#step 4
+
+sudo bash -c 'echo "server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+
+	location /redirect_me {
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
+
+    location /{
+        add_header X-served-By "$(hostname)";
+    }
+}" > /etc/nginx/sites-available/default'
+
+#step 5
+sudo service nginx restart
