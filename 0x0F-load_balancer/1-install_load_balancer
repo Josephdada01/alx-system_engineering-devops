@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#Install and configure HAproxy on your lb-01 server.
+
+#to install haproxy
+sudo apt-get update
+sudo apt-get install haproxy
+
+
+#configuring haproxy to share traffic btwn 2 servers
+FILEPATH=/etc/haproxy/haproxy.cfg
+CONTENT="
+frontend http-frontend
+	bind *:80
+	mode http
+	default_backend http-backend
+backend http-backend
+	balance roundrobin
+	server 346804-web-01 54.90.59.15 check
+	server 346804-web-02 54.209.81.141 check"
+
+#sending the content into the filepath
+echo "$CONTENT" | sudo tee -a "$FILEPATH"
+
+#enabling iniit script to start haproxy
+echo "ENDABLE=1" | sudo tee /etc/default/haproxy
+
+sudo service haproxy restart
