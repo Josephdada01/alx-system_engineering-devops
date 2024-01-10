@@ -33,6 +33,6 @@ sudo bash -c 'echo "server {
 }" > /etc/nginx/sites-available/default'
 
 
-#last step
+#last step restarting
 sudo service nginx restart
 
