@@ -39,5 +39,5 @@ frontend http-frontend
         default_backend http-backend
 backend http-backend
         balance roundrobin
-        server 346804-web-01 52.201.229.78 check
+        server 346804-web-01 52.201.229.78:80 check
         server 346804-web-02 54.87.205.191 check
