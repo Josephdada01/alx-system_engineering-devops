@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#write a Bash script that accepts one argument
+#the script should run the whoami command under the
+#user passed as an argument
+
+if [ $# -eq 0 ]; then
+	exit 1
+fi
+
+username=$1
+
+
+sudo -u "$username" whoami
