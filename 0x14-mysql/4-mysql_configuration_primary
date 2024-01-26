@@ -1,0 +1,9 @@
+[mysqld]
+server-id = 1
+log_bin = /var/log/mysql/mysql-bin.log
+log_bin_index = /var/log/mysql/mysql-bin.log.index
+relay_log = /var/log/mysql/mysql-relay-bin
+relay_log_index = /var/log/mysql/mysql-relay-bin.index
+log_slave_updates = 1
+auto-increment-increment = 2
+auto-increment-offset = 1
