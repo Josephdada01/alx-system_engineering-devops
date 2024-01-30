@@ -15,15 +15,15 @@ def get_employee_todo_progress(employee_id):
     employee_id: the user's id
     """
     user_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
-    try:
-        with urllib.request.urlopen(user_url) as user_response:
-            user_data = json.loads(user_response.read().decode('utf-8'))
-            employee_name = user_data.get('name')
-
-            todo_url = (
+    todo_url = (
                 'https://jsonplaceholder.typicode.com/'
                 f'todos?userId={employee_id}'
                 )
+    try:
+        with urllib.request.urlopen(user_url) as user_response:
+            user_data = json.loads(user_response.read().decode('utf-8'))
+            employee_name = user_data.get('username')
+
             """Make a GET request to fetch TODO list data"""
             with urllib.request.urlopen(todo_url) as todo_response:
                 todo_data = json.loads(todo_response.read().decode('utf-8'))
