@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """0-gather_data_from_an_API module"""
+
 import json
 import sys
 import urllib.request
@@ -35,9 +36,13 @@ def get_employee_todo_progress(employee_id):
                                    task['completed']]
 
                 """ Display employee TODO list progress """
-                print(f'Employee {employee_name} is done with tasks '
+                """
+                print(f'Employee {employee_name} is done with tasks ', end=""
                       f'({len(completed_tasks)}/{total_tasks}): '
                       )
+                """
+                print(f'Employee {employee_name} is done with ', end='')
+                print(f'tasks({len(completed_tasks)}/{total_tasks}):')
 
                 """ Display titles of completed tasks"""
                 for task in completed_tasks:
