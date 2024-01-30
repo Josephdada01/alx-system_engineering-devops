@@ -20,7 +20,7 @@ def get_employee_todo_progress(employee_id):
             """Extracting employees name"""
             employee_name = user_data.get('name')
 
-            """ URL to GET todo of the user"""
+            """URL to GET todo of the user"""
             todo_url = (
                 'https://jsonplaceholder.typicode.com/'
                 f'todos?userId={employee_id}'
@@ -35,23 +35,14 @@ def get_employee_todo_progress(employee_id):
                 completed_tasks = [task for task in todo_data if
                                    task['completed']]
 
-                """ Display employee TODO list progress """
-                """
-                print(f'Employee {employee_name} is done with tasks ', end=""
-                      f'({len(completed_tasks)}/{total_tasks}): '
-                      )
-                """
+                """ Displ employee TODO list progress """
                 print(f'Employee {employee_name} is done with ', end='')
                 print(f'tasks({len(completed_tasks)}/{total_tasks}):')
 
-                """ Display titles of completed tasks"""
+                """titles of completed tasks"""
                 for task in completed_tasks:
                     print(f'\t{task["title"]}')
     except urllib.error.HTTPError as e:
-        print(e)
-    except urllib.error.URLError as e:
-        print(e)
-    except json.JSONDecodeError as e:
         print(e)
 
 
