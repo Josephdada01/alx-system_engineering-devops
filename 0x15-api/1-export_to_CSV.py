@@ -39,17 +39,18 @@ def get_employee_todo_progress(employee_id):
                 for task in completed_tasks:
                     print(f'\t{task["title"]}')
 
+                """
                 csv_filename = f'{employee_id}.csv'
                 with open(csv_filename, 'w', newline='') as csv_file:
                     csv_writer = csv.writer(csv_file)
 
-                    """Write to csv header"""
+                Write to csv header
                     csv_writer.writerow(["USER_ID", "USERNAME",
                                          "TASK_COMPLETED_STATUS",
                                          "TASK_TITLE"
                                          ])
 
-                    """writing task data to csv"""
+                    writing task data to csv
                     for task in todo_data:
                         csv_writer.writerow([employee_id, employee_name,
                                              task['completed'],
@@ -57,6 +58,17 @@ def get_employee_todo_progress(employee_id):
                                              ])
                 print(f'Data exported to {csv_filename}')
 
+                """
+                with open(f'{sys.argv[1]}.csv', 'w', newline='') as f:
+                    for data in todo_data:
+                        f.write(
+                            '"{}","{}","{}","{}"\n'.format(
+                                employee_id,
+                                employee_name,
+                                data.get('completed'),
+                                data.get('title')
+                                )
+                                )
     except urllib.error.HTTPError as e:
         print(e)
 
