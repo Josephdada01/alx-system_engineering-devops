@@ -39,21 +39,25 @@ def get_employee_todo_progress(employee_id):
                 for task in completed_tasks:
                     print(f'\t{task["title"]}')
 
-                json_filename = f'{employee_id}.json'
-                with open(json_filename, 'w') as json_file:
-                    json_data = []
-                    for task in todo_data:
-                        task_obj = {
-                            "task": task.get('title'),
-                            "completed": task.get('completed'),
+                """ all tasks that are owned by this employee """
+                task_obj = []
+                for data in todo_data:
+                    task_obj.append(
+                        {
+                            "task": data.get('title'),
+                            "completed": data.get('completed'),
                             "username": employee_name,
                             }
-                        json_data.append(task_obj)
-                    """Check if the last task object is empty&remove it"""
-                    if json_data and not any(json_data[-1].values()):
-                        json_data.pop()
-                        json.dump({"USER_ID": json_data}, json_file, indent=2)
-
+                            )
+                    if not task_obj[-1]:
+                        task_obj.append(', ')
+                """dictionary"""
+                dictionary = {
+                        employee_id: task_obj
+                        }
+                json_object = json.dumps(dictionary)
+                with open(f'{sys.argv[1]}.json', 'w') as f:
+                    f.write(json_object)
     except urllib.error.HTTPError as e:
         print(e)
 
