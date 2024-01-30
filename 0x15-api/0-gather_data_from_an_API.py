@@ -17,10 +17,8 @@ def get_employee_todo_progress(employee_id):
     try:
         with urllib.request.urlopen(user_url) as user_response:
             user_data = json.loads(user_response.read().decode('utf-8'))
-            """Extracting employees name"""
             employee_name = user_data.get('name')
 
-            """URL to GET todo of the user"""
             todo_url = (
                 'https://jsonplaceholder.typicode.com/'
                 f'todos?userId={employee_id}'
@@ -30,12 +28,9 @@ def get_employee_todo_progress(employee_id):
                 todo_data = json.loads(todo_response.read().decode('utf-8'))
 
                 total_tasks = len(todo_data)
-
-                """Filter completed tasks"""
                 completed_tasks = [task for task in todo_data if
                                    task['completed']]
 
-                """ Displ employee TODO list progress """
                 print(f'Employee {employee_name} is done with ', end='')
                 print(f'tasks({len(completed_tasks)}/{total_tasks}):')
 
