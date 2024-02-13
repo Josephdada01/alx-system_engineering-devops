@@ -12,7 +12,7 @@ def number_of_subscribers(subreddit):
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     try:
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, allow_redirects=False)
         data = response.json()
 
         if 'data' in data and 'subscribers' in data['data']:
