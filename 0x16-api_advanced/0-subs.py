@@ -8,9 +8,9 @@ def number_of_subscribers(subreddit):
     a function that queries the Reddit API and returns the number of
     subscribers (not active users, total subscribers) for a given subreddit
     """
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    """setting a custom User-Agent in case of too many request"""
     headers = {'User-agent': 'My User Agent'}
+
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
     try:
         response = requests.get(url, headers=headers)
         data = response.json()
